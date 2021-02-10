@@ -629,9 +629,9 @@ var TreeState = /*#__PURE__*/function () {
         return result;
       }
 
-      var rowModels = _processNode(data, 0, 0, 0, true);
+      var rowModels = _processNode(data, 0, 0, 0, true); //console.log(rowModels);
 
-      console.log(rowModels);
+
       return new TreeState(rowModels);
     }
   }, {
@@ -755,9 +755,9 @@ var TreeState = /*#__PURE__*/function () {
         if (startRange[startRange.length - 1].metadata.depth < updatedRange[0].metadata.depth) {
           startRange[startRange.length - 1].$state.isExpanded = true;
         }
-      }
+      } //console.log(expandAllClicked);
 
-      console.log(expandAllClicked);
+
       return new TreeState(startRange.concat(updatedRange, endRange));
     }
   }, {
@@ -777,12 +777,6 @@ var TreeState = /*#__PURE__*/function () {
       var _top = source.data[from].$state.top;
       var updatedRange = TreeState.sliceRows(source, from, to).map(function (model, i) {
         var categoryId = model.data.categoryId ? model.data.categoryId : model.data.name;
-        console.log('---');
-        console.log(model);
-        console.log(source);
-        console.log(from);
-        console.log(to);
-        console.log('---');
         var isStared = starsMapper.find(function (starObj) {
           return starObj[categoryId];
         });
@@ -917,9 +911,9 @@ var TreeState = /*#__PURE__*/function () {
         if (startRange[startRange.length - 1].metadata.depth < updatedRange[0].metadata.depth) {
           startRange[startRange.length - 1].$state.isExpanded = true;
         }
-      }
+      } //console.log(expandAllClicked);
 
-      console.log(expandAllClicked);
+
       return new TreeState(startRange.concat(updatedRange, endRange));
     }
   }, {
@@ -1098,7 +1092,7 @@ var VirtualListRow = /*#__PURE__*/function (_Component) {
   _createClass(VirtualListRow, [{
     key: "render",
     value: function render() {
-      console.log(this.props);
+      //console.log(this.props);
       var _this$props = this.props,
           model = _this$props.model,
           columns = _this$props.columns,
@@ -18348,7 +18342,7 @@ var VirtualList = /*#__PURE__*/function (_Component) {
   _createClass(VirtualList, [{
     key: "render",
     value: function render() {
-      console.log(this.props);
+      //console.log(this.props);
       var _this$props = this.props,
           data = _this$props.data,
           columns = _this$props.columns,
@@ -18369,7 +18363,6 @@ var VirtualList = /*#__PURE__*/function (_Component) {
           visibleRowsData.push(rowModel);
         }
       });
-      console.log(visibleRowsData);
       var visibleVLRows = visibleRowsData.map(function (rowModel, relIndex) {
         return /*#__PURE__*/React__default.createElement(VirtualListRow, {
           key: relIndex,
@@ -18457,7 +18450,7 @@ var TreeTable = /*#__PURE__*/function (_Component) {
   _createClass(TreeTable, [{
     key: "render",
     value: function render() {
-      console.log(this.props);
+      //console.log(this.props);
       var _this$props = this.props,
           value = _this$props.value,
           children = _this$props.children,
